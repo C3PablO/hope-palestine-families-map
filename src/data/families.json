@@ -1,0 +1,22 @@
+[
+  { "id": 1,  "name": "Niveen",              "lat": 31.527, "lng": 34.450, "location": "Gaza, norte de Al-Rimal, cerca del Hospital Al-Shifa" },
+  { "id": 2,  "name": "Yazan",               "lat": 31.512, "lng": 34.440, "location": "Ciudad de Gaza, Al-Karama" },
+  { "id": 3,  "name": "Rawan",               "lat": 31.440, "lng": 34.390, "location": "Campo de refugiados de Nuseirat" },
+  { "id": 4,  "name": "Aya Al-Sharif",       "lat": 31.320, "lng": 34.270, "location": "Campo de refugiados de Al-Mawasi" },
+  { "id": 5,  "name": "Ahmad Farj",          "lat": 31.440, "lng": 34.400, "location": "Campo de refugiados de Nuseirat" },
+  { "id": 6,  "name": "Nemrru",              "lat": 31.505, "lng": 34.440, "location": "Barrio Al Nasr, Ciudad de Gaza" },
+  { "id": 7,  "name": "Jehad",               "lat": 31.432, "lng": 34.400, "location": "Campo de refugiados de Nuseirat" },
+  { "id": 8,  "name": "Waeel",               "lat": 31.497, "lng": 34.435, "location": "Tel Al-Hawa, sur de Ciudad de Gaza" },
+  { "id": 9,  "name": "Ahmed Ghazi",         "lat": 31.345, "lng": 34.305, "location": "Cerca del Hospital de Nasser" },
+  { "id": 10, "name": "Marah",               "lat": 31.512, "lng": 34.450, "location": "Gaza Public Security, detrás de la Mezquita Issa Murad" },
+  { "id": 11, "name": "Nader",               "lat": 31.432, "lng": 34.390, "location": "Al Nadi Al Hali Street, Nusayrat" },
+  { "id": 12, "name": "Aya Abu",             "lat": 31.505, "lng": 34.465, "location": "Ciudad de Gaza, escuela Ramla en Shuja'iyya" },
+  { "id": 13, "name": "Hedaya",              "lat": 31.520, "lng": 34.448, "location": "Barrio de Karama, Gaza Norte" },
+  { "id": 14, "name": "Haneen",              "lat": 31.527, "lng": 34.440, "location": "Barrio Al-Jalaa, Ciudad de Gaza" },
+  { "id": 15, "name": "Mohammed Ayad Jamil", "lat": 31.542, "lng": 34.495, "location": "Abu Iskandar, Norte de Gaza" },
+  { "id": 16, "name": "Ataa",                "lat": 31.425, "lng": 34.348, "location": "Deir al-Balah" },
+  { "id": 17, "name": "Ahmed Ismael",        "lat": 31.417, "lng": 34.348, "location": "Deir al-Balah" },
+  { "id": 18, "name": "Hamdy",               "lat": 31.550, "lng": 34.495, "location": "Gaza Norte" },
+  { "id": 19, "name": "Mohammed al Hindi",   "lat": 31.550, "lng": 34.507, "location": "Gaza Norte" },
+  { "id": 20, "name": "Hedaya",              "lat": 31.520, "lng": 34.438, "location": "Gaza Norte, Karama Towers" }
+]
