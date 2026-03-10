@@ -18,5 +18,8 @@
   { "id": 17, "name": "Ahmed Ismael",        "lat": 31.417, "lng": 34.348, "location": "Deir al-Balah" },
   { "id": 18, "name": "Hamdy",               "lat": 31.550, "lng": 34.495, "location": "Gaza Norte" },
   { "id": 19, "name": "Mohammed al Hindi",   "lat": 31.550, "lng": 34.507, "location": "Gaza Norte" },
-  { "id": 20, "name": "Hedaya",              "lat": 31.520, "lng": 34.438, "location": "Gaza Norte, Karama Towers" }
+  { "id": 20, "name": "Hedaya",              "lat": 31.520, "lng": 34.438, "location": "Gaza Norte, Karama Towers" },
+  { "id": 21, "name": "Nour",               "lat": 31.415, "lng": 34.385, "location": "Az Zawaida, al sur de Nuseirat" },
+  { "id": 22, "name": "Mahmoud",            "lat": 31.410, "lng": 34.348, "location": "Deir al-Balah" },
+  { "id": 23, "name": "Majd",              "lat": 31.535, "lng": 34.452, "location": "Oeste de Ciudad de Gaza, campo de Al-Shati" }
 ]

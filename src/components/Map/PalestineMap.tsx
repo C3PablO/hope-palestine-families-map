@@ -24,8 +24,8 @@ export default function PalestineMap({ families }: Props) {
     <MapContainer
       className="palestine-map"
       center={[31.45, 34.42]}
-      zoom={11.5}
-      zoomSnap={0.5}
+      zoom={11.3}
+      zoomSnap={0.1}
       zoomDelta={0.5}
       scrollWheelZoom={true}
     >

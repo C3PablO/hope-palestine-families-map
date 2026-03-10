@@ -11,7 +11,7 @@ export default function FamilyListItem({ family, index }: Props) {
       <span className="family-list__dot">{index}</span>
       <div>
         <span className="family-list__name">{family.name}</span>
-        <span className="family-list__location">{family.location}</span>
+        {/* <span className="family-list__location">{family.location}</span> */}
       </div>
     </li>
   );
