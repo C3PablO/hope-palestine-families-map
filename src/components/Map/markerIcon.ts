@@ -1,6 +1,7 @@
 import L from "leaflet";
 
-export function createNumberedIcon(num: number): L.DivIcon {
+export function createNumberedIcon(num: number, selected = false): L.DivIcon {
+  const bg = selected ? "#000" : "#5B8648";
   return L.divIcon({
     className: "",
     iconSize: [20, 20],
@@ -8,7 +9,7 @@ export function createNumberedIcon(num: number): L.DivIcon {
     popupAnchor: [0, -12],
     html: `<div style="
       width:20px;height:20px;
-      background:#5B8648;
+      background:${bg};
       border:2px solid #fff;
       border-radius:50%;
       box-shadow:0 2px 6px rgba(0,0,0,.35);

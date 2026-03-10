@@ -52,8 +52,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 0;
+  padding: 8px 4px;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.family-list__item:hover {
+  background: #e8f0e4;
+}
+
+.family-list__item--selected {
+  background: #d4e5cc;
+}
+
+.family-list__item--selected .family-list__dot {
+  background: #000;
 }
 
 .family-list__dot {

@@ -5,10 +5,13 @@ import "./FamilyList.css";
 
 interface Props {
   families: Family[];
+  onSelect: (family: Family) => void;
+  selectedId: number | null;
 }
 
-export default function FamilyList({ families }: Props) {
-  const [collapsed, setCollapsed] = useState(false);
+export default function FamilyList({ families, onSelect, selectedId }: Props) {
+  const isMobile = window.matchMedia("(max-width: 1200px)").matches;
+  const [collapsed, setCollapsed] = useState(isMobile);
 
   return (
     <div className="family-list-wrapper">
@@ -23,7 +26,13 @@ export default function FamilyList({ families }: Props) {
         <aside className="family-list">
           <ul className="family-list__items">
             {families.map((f, i) => (
-              <FamilyListItem key={f.id} family={f} index={i + 1} />
+              <FamilyListItem
+                key={f.id}
+                family={f}
+                index={i + 1}
+                selected={f.id === selectedId}
+                onSelect={onSelect}
+              />
             ))}
           </ul>
         </aside>
