@@ -1,9 +1,26 @@
 import "leaflet/dist/leaflet.css";
 import { type LatLngBoundsExpression } from "leaflet";
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvent } from "react-leaflet";
 import HeatmapLayer from "./HeatmapLayer";
 import borders from "../../data/palestine-borders.json";
+import { useRef } from "react";
 import "./PalestineMap.css";
+
+const MAX_ZOOM_OFFSET = 0.5;
+
+function ZoomLimiter() {
+  const map = useMap();
+  const initialZoomSet = useRef(false);
+
+  useMapEvent("zoomend", () => {
+    if (!initialZoomSet.current) {
+      initialZoomSet.current = true;
+      map.setMaxZoom(map.getZoom() + MAX_ZOOM_OFFSET);
+    }
+  });
+
+  return null;
+}
 
 interface Props {
   points: [number, number][];
@@ -44,6 +61,7 @@ export default function PalestineMap({ points }: Props) {
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       {SHOW_BORDERS && <GeoJSON data={borders as GeoJSON.FeatureCollection} style={borderStyle} />}
+      <ZoomLimiter />
       <HeatmapLayer points={points} />
     </MapContainer>
   );
