@@ -1,17 +1,12 @@
 import "leaflet/dist/leaflet.css";
 import { type LatLngBoundsExpression } from "leaflet";
-import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
-import { useEffect } from "react";
-import FamilyMarker from "./FamilyMarker";
-import type { Family } from "../../types/family";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import HeatmapLayer from "./HeatmapLayer";
 import borders from "../../data/palestine-borders.json";
 import "./PalestineMap.css";
 
 interface Props {
-  families: Family[];
-  selectedFamily: Family | null;
-  flyTarget: Family | null;
-  onSelect: (family: Family) => void;
+  points: [number, number][];
 }
 
 const SHOW_BORDERS = false;
@@ -23,27 +18,17 @@ const borderStyle = {
   fillOpacity: 0.08,
 };
 
-function getFamilyBounds(families: Family[]): LatLngBoundsExpression {
-  const lats = families.map((f) => f.lat);
-  const lngs = families.map((f) => f.lng);
+function getBounds(points: [number, number][]): LatLngBoundsExpression {
+  const lats = points.map(([lat]) => lat);
+  const lngs = points.map(([, lng]) => lng);
   return [
     [Math.min(...lats), Math.min(...lngs)],
     [Math.max(...lats), Math.max(...lngs)],
   ];
 }
 
-function FlyTo({ family }: { family: Family | null }) {
-  const map = useMap();
-  useEffect(() => {
-    if (family) {
-      map.flyTo([family.lat, family.lng], 14, { duration: 0.8 });
-    }
-  }, [family, map]);
-  return null;
-}
-
-export default function PalestineMap({ families, selectedFamily, flyTarget, onSelect }: Props) {
-  const bounds = getFamilyBounds(families);
+export default function PalestineMap({ points }: Props) {
+  const bounds = getBounds(points);
 
   return (
     <MapContainer
@@ -59,10 +44,7 @@ export default function PalestineMap({ families, selectedFamily, flyTarget, onSe
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       {SHOW_BORDERS && <GeoJSON data={borders as GeoJSON.FeatureCollection} style={borderStyle} />}
-      <FlyTo family={flyTarget} />
-      {families.map((f, i) => (
-        <FamilyMarker key={f.id} family={f} index={i + 1} selected={selectedFamily?.id === f.id} onSelect={onSelect} />
-      ))}
+      <HeatmapLayer points={points} />
     </MapContainer>
   );
 }
